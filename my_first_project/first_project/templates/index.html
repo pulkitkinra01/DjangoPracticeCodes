@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+  </head>
+  <body>
+    <h1>First Django Page</h1>
+
+    <a href="{% url 'contact' %}">Click to go to Contact</a>
+    <ul>
+      <li>views.py</li>
+      <li>urls.py</li>
+    </ul>
+    <img src="{% static 'image.jpg' %}" alt="", height="200", width="200"/>
+
+    <form action="{% url 'contact' %}" method="post">
+      <input type="text" name="user_input" placeholder="Enter Text..">
+      <input type="submit" value="Submit">
+    </form>
+
+    <button onclick="changeColor()">Click Me</button>
+
+    <script type="text/javascript" src="{% static 'main.js' %}">
+
+    </script>
+  </body>
+</html>

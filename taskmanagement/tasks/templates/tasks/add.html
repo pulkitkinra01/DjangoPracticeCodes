@@ -1,0 +1,21 @@
+{% extends 'tasks/layout.html' %}
+
+{% block body %}
+    {% if success %}
+        <h1> Added to Task Successfully </h1>
+    {% endif %}
+    <h1> Add Task </h1>
+    <form class="" method="post" action="{% url 'tasks:add' %}">
+        {% csrf_token %}
+        {{ form }}
+      {% comment %} <input type="text" name="" value=""> {% endcomment %}
+      <input type="submit" name="Submit" value="Submit">
+    </form>
+
+    {% comment %} 
+        // Use AppName to remove namespace collision
+        // csrf adds an extra hidden to stop forging the users with values
+        // django adds different ways to add forms to make our life easier
+    {% endcomment %}
+    <a href="{% url 'tasks:index' %}" > ShowTasks </a>
+{% endblock %}

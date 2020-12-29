@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+  </head>
+  <body>
+    <h1>Lets get going</h1>
+    <a href="{% url 'contact' %}">Contact</a>
+
+    <form action="{% url 'contact' %}">
+      {% csrf_token %}
+      <input type="text" name="user_input">
+      <input type="submit" value="submit">
+    </form>
+
+
+    <button onclick="changeColor()">Click Me</button>
+    <script type="text/javascript" src="{% static 'main.js' %}">
+
+    </script>
+  </body>
+</html>

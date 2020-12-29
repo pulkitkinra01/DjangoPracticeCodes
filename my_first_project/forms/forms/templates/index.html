@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>FORMS</h1>
+    <a href="{% url 'result' %}">Click here</a>
+    <form  action="{% url 'result' %}">
+      {% csrf_token %}
+        <input type="text" name="user_input">
+        <input type="submit" value="Click me">
+    </form>
+    <p>{{a}}</p>
+  </body>
+</html>
